@@ -1,0 +1,96 @@
+<html>
+<!-- Author: Ryan Jay Salapare - 000823653 -->
+<head>
+
+    <script
+        src="https://www.bing.com/api/maps/mapcontrol?key=Asp2Nk1RZgdcCMIFY8VGzornwYR-JOov-kuRlsuMAY2jfpWRVEYA8gG01B86VYct&callback=loadMapScenario"
+        async defer> </script>
+    <script src="maps.js"></script>
+    <script src="education.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+        body {
+            background-color: lightgray;
+        }
+        #main {
+            display: grid;
+            grid-template-columns: auto, auto, auto, auto;
+        }
+
+        #filterButtons {
+            grid-column: 1;
+            width: 50px;
+            margin: 0px;
+        }
+
+        #filterButtons button {
+            width: 100px;
+        }
+
+        #map {
+            grid-column: 2;
+            width: 600px;
+            height: 600px;
+            margin: 0px;
+        }
+
+        #error {
+            grid-column: 2 / 2;
+        }
+
+        #clearButton {
+            grid-column: 3 / 3;
+            width: fit-content;
+        }
+
+        #directions {
+            grid-column: 3;
+            width: 400px;
+            height: 600px;
+            margin: 0px;
+        }
+
+        #directionsDescription {
+            grid-column: 4;
+            height: 600px;
+            overflow-y: scroll;
+            margin: 0px;
+        }
+
+        #form {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="main">
+        <div id="filterButtons">
+            <button id="all">All</button>
+            <button id="elem">Elementary</button>
+            <button id="middle">Middle</button>
+            <button id="second">Secondary</button>
+            <button id="post">Post-Secondary</button>
+            <button id="alt">Alternative</button>
+            <button id="adult">Adult</button>
+            <button id="sec23">Section 23</button>
+        </div>
+        <div id="map"></div>
+        <div id="directions"></div>
+        <div id="directionsDescription"></div>
+        <div id="error"></div>
+        <!-- <div id="clearDirection"><button>Clear Direction</button></div> -->
+        <button id="clearButton">Clear Direction</button>
+    </main>
+
+    <form id="form">
+        <label>Create Pushpin:</label><br>
+        <input type="text" id="name" placeholder="Name"><br>
+        <input type="text" id="address" placeholder="Address"><br>
+        <button id="addPushpin"><a href="#">Submit</a></button>
+    </form>
+</body>
+
+</html>
